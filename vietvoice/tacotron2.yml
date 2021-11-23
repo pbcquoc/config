@@ -28,7 +28,7 @@ postnet_config:
   embedding_dim: 512
   kernel_size: 5
   n_convolutions: 5
-symbol_config:
+symbols_config:
   delimiter: /
   kind: phoneme
   symbols:

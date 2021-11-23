@@ -1,0 +1,33 @@
+data_config:
+  filter_length: 1024
+  hop_length: 256
+  mel_fmax: 8000.0
+  mel_fmin: 0.0
+  n_mel_channels: 80
+  sampling_rate: 22050
+  segment_length: 16000
+  win_length: 1024
+train_config:
+  batch_size: 12
+  device: cuda:0
+  eval_steps: 2000
+  learning_rate: 0.0001
+  load_workers: 3
+  log_dir: output/
+  num_iters: 500000
+  pretrained_md5: 436d8514f43f1cab2e494c6ff86cb538
+  pretrained_url: 1yQWB9bMDckpncV2u-G-mmx3wCD048Ftt
+  seed: 1234
+  sigma: 1.0
+  test_files: test_files.txt
+  train_files: train_files.txt
+waveglow_config:
+  WaveNet_config:
+    kernel_size: 3
+    n_channels: 256
+    n_layers: 8
+  n_early_every: 4
+  n_early_size: 2
+  n_flows: 12
+  n_group: 8
+  n_mel_channels: 80

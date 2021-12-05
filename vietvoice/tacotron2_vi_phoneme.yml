@@ -190,4 +190,4 @@ train_config:
   pretrained_url: 1sdo0mwL7pEtXFp_EZiLE2H3DTNDo2Yb_
   test_files: test_files.txt
   train_files: train_files.txt
-  warmup_steps: 50000
+  warmup_steps: 0.5

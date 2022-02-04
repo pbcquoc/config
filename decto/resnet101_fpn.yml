@@ -1,0 +1,98 @@
+backbone:
+  strides: &id001
+  - 4
+  - 8
+  - 16
+  - 32
+  - 64
+dataset_config:
+  classes:
+  - so_ky_hieu
+  - ngay_ban_hanh
+  - nguoi_ky
+  - trich_yeu
+  - co_quan_ban_hanh
+  - noi_nhan_ben_ngoai
+  - noi_nhan_ben_trong
+  - ngay
+  - thang
+  - nam
+  - ten_van_ban
+  - noi_dung
+  - chuc_vu
+  - so_den
+  - ngay_den
+  - do_khan
+  - do_mat
+  data_dir: /data/quocpbc/data/gthc/layout
+  max_size: 1000
+  min_size: 600
+  test_file: test
+  train_file: train
+fpn_config:
+  in_channels_list:
+  - 256
+  - 512
+  - 1024
+  - 2048
+  out_channels: 256
+roi_head_config:
+  dropout: 0.1
+  in_channels: 256
+  n_class: 21
+  roi_size: 7
+roi_pooler_config:
+  base_level: 4
+  base_size: 224
+  roi_size: 7
+  strides:
+  - 4
+  - 8
+  - 16
+  - 32
+rpn_config:
+  anchor_sizes:
+  - - 2
+  - - 4
+  - - 8
+  - - 16
+  - - 32
+  aspect_ratios:
+  - - 0.5
+    - 1
+    - 2
+  - - 0.5
+    - 1
+    - 2
+  - - 0.5
+    - 1
+    - 2
+  - - 0.5
+    - 1
+    - 2
+  - - 0.5
+    - 1
+    - 2
+  feat_strides: *id001
+  in_channels: 256
+  mid_channels: 256
+  proposal_creator_config:
+    min_size: 16
+    n_test_post_nms: 300
+    n_test_pre_nms: 6000
+    n_train_post_nms: 2000
+    n_train_pre_nms: 12000
+    nms_thresh: 0.7
+train_config:
+  device: cuda:0
+  eval_steps: 5000
+  learning_rate: 0.001
+  log_dir: output_gthc/
+  lr_decay: 0.1
+  num_eval_samples: 2000
+  num_iters: 100000
+  roi_sigma: 0.0
+  rpn_sigma: 0.0
+  use_adam: false
+  verbose: 20
+  weight_decay: 0.0005

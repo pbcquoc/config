@@ -26,7 +26,7 @@ dataset_config:
   - do_mat
   data_dir: /data/quocpbc/data/gthc/layout
   max_size: 1000
-  min_size: 600,
+  min_size: 600
   max_size_test: 1000
   min_size_test: 600
   test_file: test
